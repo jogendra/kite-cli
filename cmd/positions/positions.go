@@ -1,18 +1,18 @@
-package logout
+package positions
 
 import (
 	"fmt"
 	"github.com/spf13/cobra"
 )
 
-func NewCmdLogout() *cobra.Command {
-	logoutCmd := &cobra.Command{
-		Use:   "logout",
+func NewCmdPositions() *cobra.Command {
+	positionsCmd := &cobra.Command{
+		Use:   "positions",
 		Short: "A brief description of your command",
 		Long:  `A longer description`,
 		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("logout called")
+			fmt.Println("positions called")
 		},
 	}
-	return logoutCmd
+	return positionsCmd
 }

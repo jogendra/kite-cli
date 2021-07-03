@@ -1,18 +1,18 @@
-package logout
+package orders
 
 import (
 	"fmt"
 	"github.com/spf13/cobra"
 )
 
-func NewCmdLogout() *cobra.Command {
-	logoutCmd := &cobra.Command{
-		Use:   "logout",
+func NewCmdOrders() *cobra.Command {
+	ordersCmd := &cobra.Command{
+		Use:   "orders",
 		Short: "A brief description of your command",
 		Long:  `A longer description`,
 		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("logout called")
+			fmt.Println("orders called")
 		},
 	}
-	return logoutCmd
+	return ordersCmd
 }

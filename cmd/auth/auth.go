@@ -12,7 +12,7 @@ func NewCmdAuth() *cobra.Command {
 	authCmd := &cobra.Command{
 		Use:   "auth <command>",
 		Short: "A brief description of your command",
-		Long: `TO ADD LATER`,
+		Long:  `TO ADD LATER`,
 		Run: func(cmd *cobra.Command, args []string) {
 			fmt.Println("auth called")
 		},

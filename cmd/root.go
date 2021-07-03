@@ -3,6 +3,11 @@ package cmd
 import (
 	"fmt"
 	"kite/cmd/auth"
+	"kite/cmd/gtt"
+	"kite/cmd/holdings"
+	"kite/cmd/orders"
+	"kite/cmd/positions"
+	"kite/cmd/profile"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -15,7 +20,7 @@ var cfgFile string
 var rootCmd = &cobra.Command{
 	Use:   "kite",
 	Short: "A brief description of your application",
-	Long: `A longer description`,
+	Long:  `A longer description`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
@@ -31,8 +36,7 @@ func init() {
 	cobra.OnInitialize(initConfig)
 
 	// Add Subcommands
-	authCmd := auth.NewCmdAuth()
-	rootCmd.AddCommand(authCmd)
+	addSubcommands()
 
 	// Here you will define your flags and configuration settings.
 	// Cobra supports persistent flags, which, if defined here,
@@ -67,4 +71,19 @@ func initConfig() {
 	if err := viper.ReadInConfig(); err == nil {
 		fmt.Fprintln(os.Stderr, "Using config file:", viper.ConfigFileUsed())
 	}
+}
+
+func addSubcommands() {
+	authCmd := auth.NewCmdAuth()
+	rootCmd.AddCommand(authCmd)
+	gttCmd := gtt.NewCmdGTT()
+	rootCmd.AddCommand(gttCmd)
+	holdingsCmd := holdings.NewCmdHoldings()
+	rootCmd.AddCommand(holdingsCmd)
+	positionsCmd := positions.NewCmdPositions()
+	rootCmd.AddCommand(positionsCmd)
+	ordersCmd := orders.NewCmdOrders()
+	rootCmd.AddCommand(ordersCmd)
+	profileCmd := profile.NewCmdProfile()
+	rootCmd.AddCommand(profileCmd)
 }

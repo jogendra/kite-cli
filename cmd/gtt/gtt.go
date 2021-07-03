@@ -1,18 +1,18 @@
-package logout
+package gtt
 
 import (
 	"fmt"
 	"github.com/spf13/cobra"
 )
 
-func NewCmdLogout() *cobra.Command {
-	logoutCmd := &cobra.Command{
-		Use:   "logout",
+func NewCmdGTT() *cobra.Command {
+	gttCmd := &cobra.Command{
+		Use:   "gtt",
 		Short: "A brief description of your command",
 		Long:  `A longer description`,
 		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("logout called")
+			fmt.Println("gtt called")
 		},
 	}
-	return logoutCmd
+	return gttCmd
 }
