@@ -1,1 +1,13 @@
-// App related configurations goes here
+{
+  "name": "kite-cli",
+  "version": "0.0.1",
+  "environment": "dev",
+  "properties": [
+    {
+      "source": {
+        "api.key": "",
+        "api.secret": ""
+      }
+    }
+  ]
+}
